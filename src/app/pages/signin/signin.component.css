@@ -1,0 +1,53 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Keeps the content vertically centered */
+}
+
+h1{
+    color:#00458f ;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    width: 100%; /* Ensure the form can respond to different screen sizes */
+    max-width: 400px; /* Add a maximum width to prevent it from taking up the whole page */
+    padding: 20px; /* Add some padding to make it visually appealing */
+}
+
+form mat-form-field{
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+form .aligned-to-right{
+   text-align: right;
+   width: 100%;
+   margin-bottom: 5px;
+   button{
+    width:40%;
+   }
+}
+
+form .center-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    button{
+        width: -webkit-fill-available;
+        margin-bottom: 10px; 
+        border-radius: 4px;
+        margin-bottom: 5px; 
+    }
+}
+

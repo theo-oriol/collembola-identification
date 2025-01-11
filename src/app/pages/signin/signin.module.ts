@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SigninComponent } from './signin.component';
 import { RouterModule, Routes } from '@angular/router';
 
-
 const routes: Routes = [
   {
     path:'',
@@ -15,7 +14,9 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    
+    
   ]
 })
 export class SigninModule { }
