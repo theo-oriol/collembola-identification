@@ -1,1 +1,44 @@
-<p>predictions works!</p>
+
+<mat-grid-list cols="5" rowHeight="100px">
+
+      <mat-grid-tile  [colspan]="1"  [rowspan]="7" *ngIf="!info_imgs" ></mat-grid-tile>
+      <mat-grid-tile  [colspan]="1"  [rowspan]="7" *ngIf="info_imgs" class="full-height">
+            <div  class="image-info-panel" *ngIf="info_imgs">
+
+                  <mat-tab-group>
+                        <mat-tab label="Image Information">
+                              <h3>Image Information</h3>
+                              <p *ngIf="info_imgs['id']"><strong>File Name:</strong> {{ info_imgs['id'] }}</p>
+                              <p *ngIf="info_imgs['createdAt']"><strong>Date de création:</strong> {{ info_imgs['createdAt'] }}</p>
+                        </mat-tab>
+                        <mat-tab label="Species"> 
+                              <ng-container *ngFor="let coord of info_imgs['coord']">
+                                    <p>{{ coord['label'] }}</p>
+                              </ng-container>
+                        </mat-tab>
+                        <mat-tab label="Raw data"> Content 3 </mat-tab>
+            </mat-tab-group>
+            </div>
+      </mat-grid-tile>
+
+        <mat-grid-tile  [colspan]="3"  [rowspan]="7" *ngIf="!imageUrl">
+
+          <div class="upload-img-predictions">
+            <app-image-upload  (info_imgs)="handleJsonReceived($event)"></app-image-upload>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile  [colspan]="4"  [rowspan]="7" *ngIf="imageUrl">
+
+            <div class="upload-img-predictions">              
+              <div  class="img-pred" *ngIf="imageUrl">
+                      <canvas id="drawcoord" ></canvas>
+                      <img class="display-img" [src]="imageUrl" alt="Uploaded Image" (load)="onImageLoad($event)" />
+                </div>
+          </div>
+        </mat-grid-tile>
+
+   
+</mat-grid-list>
+
+

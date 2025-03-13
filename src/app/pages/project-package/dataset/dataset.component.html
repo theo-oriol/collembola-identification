@@ -1,0 +1,37 @@
+<mat-drawer-container class="main-container">
+    <!-- ✅ Left Sidebar (Fixed Height, No Scrolling) -->
+    <mat-drawer mode="side" opened class="fixed-drawer">
+      <div class="drawer-content">
+        <h2>Project Details</h2>
+        <a href="/project/{{this.projectId}}/description"><p>Project Description</p></a>
+        <a href="/project/{{this.projectId}}/upload-img"><p>Upload Images</p></a>
+        <a href="/project/{{this.projectId}}/dataset"><p>Dataset</p></a>
+        
+      </div>
+    </mat-drawer>
+  
+    <!-- ✅ Right Side Content: Scrollable Images -->
+    <mat-drawer-content class="scrollable-content">
+        <h1>Datasets</h1>
+
+        <mat-form-field class="example-form-field">
+            <input matInput placeholder="Search" />
+        </mat-form-field>
+
+      <div *ngIf="project_info; else loading">
+        <div class="projects-container">
+          <div *ngFor="let image of project_info.images" class="project-item">
+            <div class="image-container">
+              <img [src]="image.url" alt="{{ image.title }}">
+            </div>
+            <p class="image-title">{{ image.title }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #loading>
+        <p>Loading project data...</p>
+      </ng-template>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

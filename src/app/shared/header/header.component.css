@@ -1,0 +1,56 @@
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  min-height: 64px; /* Prevents height jump */
+}
+
+.logo img {
+  height: 50px; /* Set desired size */
+  max-height: 100%; /* Prevent overflow */
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Placeholder image style to prevent size changes */
+img:not([src]) {
+  visibility: hidden;
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .mat-button {
+    display: none;
+  }
+}
+
+mat-form-field {
+  max-height: 100%;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-top: 15px;
+}
+
+
+/* Placeholder for username to prevent height jump */
+.name-placeholder {
+  height: 24px; /* Match the height of your h3 */
+  width: 100px; /* Set a fixed width or use min-width */
+  background-color: rgba(0, 0, 0, 0.1); /* Light gray for loading effect */
+  border-radius: 4px;
+}
+
+/* Smooth appearance */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-in.loaded {
+  opacity: 1;
+}

@@ -1,0 +1,69 @@
+/* Grid container for columns */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates responsive columns */
+    gap: 20px; /* Spacing between items */
+    padding: 20px;
+  }
+  
+  /* Each card should fill its grid cell */
+  .project-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Card styling */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Cards should fit their content */
+    padding: 10px;
+  }
+  
+  /* Content inside the card */
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Left side: Image */
+  .card-image-container {
+    flex: 0 0 80px; /* Fixed width */
+    height: 80px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Right side: Text content */
+  .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Text header */
+  mat-card-header {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Action buttons */
+  mat-card-actions {
+    padding: 0;
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  

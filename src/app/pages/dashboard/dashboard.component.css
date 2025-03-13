@@ -1,0 +1,62 @@
+.create-project-button{
+  margin: 16px;
+  float: right;
+}
+.projects-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping onto multiple lines */
+  gap: 16px; /* Adds space between cards */
+  justify-content: flex-start; /* Left-aligns the cards */
+  padding: 16px;
+  align-items: stretch; /* Makes all items stretch to equal height */
+}
+
+.project-item {
+  flex: 1 1 calc(33.333% - 32px); /* 3 cards per row */
+  max-width: calc(33.333% - 32px); /* Limit width */
+  box-sizing: border-box;
+  display: flex;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content to the top & bottom */
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+/* Ensure card content fills available height */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Handle smaller screens */
+@media (max-width: 1024px) {
+  .project-item {
+    flex: 1 1 calc(50% - 16px); /* 2 cards per row */
+    max-width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-item {
+    flex: 1 1 100%; /* 1 card per row */
+    max-width: 100%;
+  }
+}
+
+.card-image{
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image-container{
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,120 @@
+/* ✅ Full-page layout */
+.main-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent entire page scrolling */
+  }
+  
+  /* ✅ Fixed Sidebar (No Scrolling) */
+  .fixed-drawer {
+    width: 250px; /* Adjust sidebar width */
+    height: 100vh; /* Full height */
+    background-color: #6ba84fff;
+    overflow: hidden; /* Prevent scrolling */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent shrinking */
+    color: white;
+  }
+  
+  /* Sidebar content */
+  .drawer-content {
+    padding: 20px;
+  }
+  
+  /* ✅ Ensure only the right content scrolls */
+  .scrollable-content {
+    flex: 1;
+    overflow-y: auto; /* ✅ Allows images to scroll */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ✅ Ensure `.projects-container` Starts from the Left */
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* ✅ Ensures images align to the left */
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: 0; /* ✅ Prevents extra spacing */
+    max-width: 100%;
+  }
+  
+  /* ✅ Square Image Container */
+  .image-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* ✅ Cropped Image */
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* ✅ Hover Effect */
+  .image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* ✅ Image Title */
+  .image-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #333;
+  }
+  
+  /* ✅ Fix Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column; /* Stack drawer on top for mobile */
+    }
+  
+    .fixed-drawer {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    .scrollable-content {
+      overflow-y: auto;
+    }
+  
+    .projects-container {
+      justify-content: flex-start; /* ✅ Ensure images are aligned left */
+      margin-left: 0; /* Remove margin on smaller screens */
+    }
+  
+    .image-container {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .image-title {
+      font-size: 12px;
+    }
+  }
+  
+  a {
+    color: #0060B6;
+    text-decoration: none;
+  }

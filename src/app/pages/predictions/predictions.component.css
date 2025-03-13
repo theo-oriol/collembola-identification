@@ -1,0 +1,59 @@
+.upload-img-predictions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Keeps the content vertically centered */
+}
+
+img-pred{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Ensures the canvas is positioned relative to this container */
+    width: 100vw;
+    height: 100vh;
+}
+
+ .display-img{
+    /* display: block;
+    width: 100vw; 
+    height: auto; 
+    object-fit: contain; 
+    max-width: 70%;
+    max-height: 90vh;
+    margin: 0 auto; */
+    /* margin-top: -5vh; */
+    display: none;
+  } 
+
+#drawcoord{
+  display: block;
+  /* max-width: 90vw;
+  max-height: 90vh; */
+}
+
+
+
+.full-height {
+  height: calc(100vh - 64px) !important; /* Full viewport height */
+}
+
+
+.image-info-panel {
+  background: #6ba84fff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%; /* Take full height */
+  display: flex;
+  flex-direction: column;
+  justify-content: top; /* Centers content vertically */
+  font-family: Arial, sans-serif;
+}
+
+.mat-tab{
+  color: white;
+}

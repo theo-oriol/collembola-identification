@@ -1,0 +1,21 @@
+<mat-drawer-container class="main-container">
+    <!-- ✅ Left Sidebar (Fixed Height, No Scrolling) -->
+    <mat-drawer mode="side" opened class="fixed-drawer">
+      <div class="drawer-content">
+        <h2>Project Details</h2>
+        <a href="/project/{{this.projectId}}/description"><p>Project Description</p></a>
+        <a href="/project/{{this.projectId}}/upload-img"><p>Upload Images</p></a>
+        <a href="/project/{{this.projectId}}/dataset"><p>Dataset</p></a>
+        
+      </div>
+    </mat-drawer>
+  
+    <!-- ✅ Right Side Content: Scrollable Images -->
+    <mat-drawer-content class="scrollable-content">
+        <h1>Project Description</h1>
+
+      <ng-template #loading>
+        <p>Loading project data...</p>
+      </ng-template>
+    </mat-drawer-content>
+  </mat-drawer-container>
